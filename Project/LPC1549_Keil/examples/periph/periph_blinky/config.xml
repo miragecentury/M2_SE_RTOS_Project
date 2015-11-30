@@ -1,0 +1,12 @@
+<LPCOpenCfg>
+	<symbol name="varExampleDestInc"  value="example/inc"/>
+
+	<template tool="xpresso" section="filelist">
+		<import src="${varExampleSrcDir}/../periph_systick" dest="${varExampleDestSrc}">
+			<include>*.c</include>
+		</import>
+		<import src="${varExampleSrcDir}/../periph_systick" dest="${varExampleDestInc}">
+			<include>*.h</include>
+		</import>
+	</template>
+</LPCOpenCfg>

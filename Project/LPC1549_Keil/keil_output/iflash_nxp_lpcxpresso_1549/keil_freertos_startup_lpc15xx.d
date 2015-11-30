@@ -1,0 +1,1 @@
+.\keil_output\iflash_nxp_lpcxpresso_1549\keil_freertos_startup_lpc15xx.o: examples\freertos\startup_code\keil_freertos_startup_lpc15xx.s
