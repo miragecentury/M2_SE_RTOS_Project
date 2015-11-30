@@ -6,13 +6,13 @@
 .\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\lpc_core\lpc_chip\chip_15xx\config_15xx\sys_config.h
 .\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\lpc_core\lpc_chip\chip_15xx\config_15xx\cmsis.h
-.\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\CMSIS\CMSIS\Include\core_cm3.h
-.\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\CMSIS\CMSIS\Include\core_cmInstr.h
-.\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\CMSIS\CMSIS\Include\core_cmFunc.h
+.\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h
+.\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h
+.\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h
 .\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\lpc_core\lpc_chip\chip_15xx\romapi_15xx.h
 .\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\lpc_core\lpc_chip\chip_common\iap.h
 .\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\lpc_core\lpc_chip\chip_common\eeprom.h
-.\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\lpc_core\lpc_chip\chip_common\error.h
+.\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\src\error.h
 .\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\lpc_core\lpc_chip\chip_15xx\rom_i2c_15xx.h
 .\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\lpc_core\lpc_chip\chip_15xx\rom_pwr_15xx.h
 .\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o: .\lpc_core\lpc_chip\chip_15xx\rom_uart_15xx.h

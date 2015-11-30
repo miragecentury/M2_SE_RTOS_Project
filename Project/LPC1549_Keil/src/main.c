@@ -1,9 +1,9 @@
 #include <stdlib.h>
+#include "freertosconfig.h"
 #include "myNetwork.h"
-#include "lpc_types.h"
+#include "myPwm.h"
+#include "error.h"
 #include "os_port.h"
-
-
 
 /* LED1 toggle thread */
 static void vLEDTask1(void *pvParameters) {

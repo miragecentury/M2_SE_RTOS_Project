@@ -64,7 +64,7 @@
 #define NET_INTERFACE_COUNT 1
 
 //PHY address
-#define LAN8720_PHY_ADDR 1
+#define ENC28J60_PHY_ADDR 1
 
 //Maximum size of the MAC filter table
 #define MAC_FILTER_MAX_SIZE 8
@@ -91,17 +91,17 @@
 #define IGMP_SUPPORT ENABLED
 
 //IPv6 support
-#define IPV6_SUPPORT ENABLED
+//#define IPV6_SUPPORT ENABLED
 //Maximum size of the IPv6 filter table
-#define IPV6_FILTER_MAX_SIZE 8
+//#define IPV6_FILTER_MAX_SIZE 8
 
 //IPv6 fragmentation support
-#define IPV6_FRAG_SUPPORT ENABLED
+//#define IPV6_FRAG_SUPPORT ENABLED
 //Maximum number of fragmented packets the host will accept
 //and hold in the reassembly queue simultaneously
-#define IPV6_MAX_FRAG_DATAGRAMS 4
+//#define IPV6_MAX_FRAG_DATAGRAMS 4
 //Maximum datagram size the host will accept when reassembling fragments
-#define IPV6_MAX_FRAG_DATAGRAM_SIZE 8192
+//#define IPV6_MAX_FRAG_DATAGRAM_SIZE 8192
 
 //MLD support
 #define MLD_SUPPORT ENABLED
