@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<emIDE_project_file>
+	<FileVersion major="1" minor="7" />
+	<Project>
+		<Option title="web_server_demo" />
+		<Option pch_mode="2" />
+		<Option compiler="armelfgcc" />
+		<Option virtualFolders="Demo Sources\;Demo Headers\;Common Sources\;Common Headers\;CycloneTCP Sources\;CycloneTCP Headers\;CycloneSSL Sources\;CycloneSSL Headers\;CycloneCrypto Sources\;CycloneCrypto Headers\;FreeRTOS Sources\;FreeRTOS Headers\;MCBSTM32F400 Sources\;MCBSTM32F400 Headers\;STM32F4xx Std Periph Lib Sources\;STM32F4xx Std Periph Lib Headers\;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="output/Debug/exe/web_server_demo.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="output/Debug/obj/" />
+				<Option type="1" />
+				<Option compiler="armelfgcc" />
+				<Compiler>
+					<Add option="-mthumb" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-mfloat-abi=softfp" />
+					<Add option="-ffunction-sections" />
+					<Add option="-fdata-sections" />
+					<Add option="-DDEBUG=1" />
+					<Add option="-DSTM32F4XX" />
+					<Add option="-DUSE_MCBSTM32F400" />
+					<Add option="-DUSE_STDPERIPH_DRIVER" />
+					<Add option="-D_WINSOCK_H" />
+					<Add directory="../src" />
+					<Add directory="../../../../common/cmsis/include" />
+					<Add directory="../../../../common/st/devices/stm32f4xx" />
+					<Add directory="../../../../common/keil/boards/mcbstm32f400" />
+					<Add directory="../../../../common/st/stm32f4xx_std_periph_lib/inc" />
+					<Add directory="../../../../common/freertos/include" />
+					<Add directory="../../../../common/freertos/portable/gcc/arm_cm4f" />
+					<Add directory="../../../../../common" />
+					<Add directory="../../../../../cyclone_tcp" />
+					<Add directory="../../../../../cyclone_ssl" />
+					<Add directory="../../../../../cyclone_crypto" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,-Map" />
+					<Add option="-Wl,${TARGET_OUTPUT_FILE}.map" />
+					<Add option="-Wl,--gc-sections" />
+					<Add option="-n" />
+					<Add option="-Wl,-cref" />
+					<Add option="-mthumb" />
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-Tstm32f407_flash.ld" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="..\..\..\..\..\utils\ResourceCompiler\bin\rc.exe ..\resources\ ..\src\res.c" />
+				</ExtraCommands>
+				<PostOutput>
+					<ConvertedOutput PostOutputCreate="0" />
+					<ConvertedOutput PostOutputType="HEX" />
+					<ConvertedOutput PostOutputFile="${TARGET_OUTPUT_DIR}${TARGET_OUTPUT_BASENAME}" />
+				</PostOutput>
+			</Target>
+			<Target title="Release">
+				<Option output="output/Release/exe/web_server_demo.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="output/Release/obj/" />
+				<Option type="1" />
+				<Option compiler="armelfgcc" />
+				<Compiler>
+					<Add option="-mthumb" />
+					<Add option="-O3" />
+					<Add option="-g" />
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-mfloat-abi=softfp" />
+					<Add option="-ffunction-sections" />
+					<Add option="-fdata-sections" />
+					<Add option="-DSTM32F4XX" />
+					<Add option="-DUSE_MCBSTM32F400" />
+					<Add option="-DUSE_STDPERIPH_DRIVER" />
+					<Add option="-D_WINSOCK_H" />
+					<Add directory="../src" />
+					<Add directory="../../../../common/cmsis/include" />
+					<Add directory="../../../../common/st/devices/stm32f4xx" />
+					<Add directory="../../../../common/keil/boards/mcbstm32f400" />
+					<Add directory="../../../../common/st/stm32f4xx_std_periph_lib/inc" />
+					<Add directory="../../../../common/freertos/include" />
+					<Add directory="../../../../common/freertos/portable/gcc/arm_cm4f" />
+					<Add directory="../../../../../common" />
+					<Add directory="../../../../../cyclone_tcp" />
+					<Add directory="../../../../../cyclone_ssl" />
+					<Add directory="../../../../../cyclone_crypto" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-Wl,-Map" />
+					<Add option="-Wl,${TARGET_OUTPUT_FILE}.map" />
+					<Add option="-Wl,--gc-sections" />
+					<Add option="-n" />
+					<Add option="-Wl,-cref" />
+					<Add option="-mthumb" />
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-Tstm32f407_flash.ld" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="..\..\..\..\..\utils\ResourceCompiler\bin\rc.exe ..\resources\ ..\src\res.c" />
+				</ExtraCommands>
+				<PostOutput>
+					<ConvertedOutput PostOutputCreate="0" />
+					<ConvertedOutput PostOutputType="HEX" />
+					<ConvertedOutput PostOutputFile="${TARGET_OUTPUT_DIR}${TARGET_OUTPUT_BASENAME}" />
+				</PostOutput>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<PostOutput>
+			<ConvertedOutput PostOutputCreate="0" />
+			<ConvertedOutput PostOutputType="HEX" />
+			<ConvertedOutput PostOutputFile="${TARGET_OUTPUT_DIR}${TARGET_OUTPUT_BASENAME}" />
+		</PostOutput>
+		<Unit filename="startup_stm32f4xx.s">
+			<Option virtualFolder="Demo Sources/" />
+		</Unit>
+		<Unit filename="../src/system_stm32f4xx.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Demo Sources/" />
+		</Unit>
+		<Unit filename="../src/stm32f4xx_it.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Demo Sources/" />
+		</Unit>
+		<Unit filename="syscalls.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Demo Sources/" />
+		</Unit>
+		<Unit filename="../src/main.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Demo Sources/" />
+		</Unit>
+		<Unit filename="../src/debug.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Demo Sources/" />
+		</Unit>
+		<Unit filename="../src/res.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Demo Sources/" />
+		</Unit>
+		<Unit filename="../src/os_port_config.h">
+			<Option virtualFolder="Demo Headers/" />
+		</Unit>
+		<Unit filename="../src/net_config.h">
+			<Option virtualFolder="Demo Headers/" />
+		</Unit>
+		<Unit filename="../src/tls_config.h">
+			<Option virtualFolder="Demo Headers/" />
+		</Unit>
+		<Unit filename="../src/crypto_config.h">
+			<Option virtualFolder="Demo Headers/" />
+		</Unit>
+		<Unit filename="../src/freertosconfig.h">
+			<Option virtualFolder="Demo Headers/" />
+		</Unit>
+		<Unit filename="../src/stm32f4xx_conf.h">
+			<Option virtualFolder="Demo Headers/" />
+		</Unit>
+		<Unit filename="../src/stm32f4xx_it.h">
+			<Option virtualFolder="Demo Headers/" />
+		</Unit>
+		<Unit filename="../../../../../common/endian.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Common Sources/" />
+		</Unit>
+		<Unit filename="../../../../../common/os_port_freertos.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Common Sources/" />
+		</Unit>
+		<Unit filename="../../../../../common/date_time.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Common Sources/" />
+		</Unit>
+		<Unit filename="../../../../../common/str.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Common Sources/" />
+		</Unit>
+		<Unit filename="../../../../../common/path.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Common Sources/" />
+		</Unit>
+		<Unit filename="../../../../../common/resource_manager.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Common Sources/" />
+		</Unit>
+		<Unit filename="../../../../../common/endian.h">
+			<Option virtualFolder="Common Headers/" />
+		</Unit>
+		<Unit filename="../../../../../common/os_port.h">
+			<Option virtualFolder="Common Headers/" />
+		</Unit>
+		<Unit filename="../../../../../common/os_port_freertos.h">
+			<Option virtualFolder="Common Headers/" />
+		</Unit>
+		<Unit filename="../../../../../common/date_time.h">
+			<Option virtualFolder="Common Headers/" />
+		</Unit>
+		<Unit filename="../../../../../common/str.h">
+			<Option virtualFolder="Common Headers/" />
+		</Unit>
+		<Unit filename="../../../../../common/path.h">
+			<Option virtualFolder="Common Headers/" />
+		</Unit>
+		<Unit filename="../../../../../common/resource_manager.h">
+			<Option virtualFolder="Common Headers/" />
+		</Unit>
+		<Unit filename="../../../../../common/error.h">
+			<Option virtualFolder="Common Headers/" />
+		</Unit>
+		<Unit filename="../../../../../common/debug.h">
+			<Option virtualFolder="Common Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/net.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/net_mem.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/drivers/stm32f4x7_eth.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/drivers/st802rt1a.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/nic.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/ethernet.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv4/arp.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv4/ipv4.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv4/ipv4_frag.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv4/icmp.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv4/igmp.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/ipv6.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/ipv6_frag.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/icmpv6.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/mld.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/ndp.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/slaac.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/ip.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/tcp.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/tcp_fsm.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/tcp_misc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/tcp_timer.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/udp.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/socket.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/bsd_socket.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/raw_socket.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dns/dns_cache.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dns/dns_client.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dns/dns_common.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dns/dns_debug.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/mdns/mdns_client.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/mdns/mdns_responder.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/mdns/mdns_common.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/netbios/nbns_client.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/netbios/nbns_responder.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/netbios/nbns_common.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dhcp/dhcp_client.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dhcp/dhcp_common.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dhcp/dhcp_debug.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/http/http_server.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/http/http_server_auth.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/http/http_server_misc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/http/mime.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/http/ssi.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/smtp/smtp_client.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneTCP Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/net.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/net_mem.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/drivers/stm32f4x7_eth.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/drivers/st802rt1a.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/nic.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/ethernet.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv4/arp.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv4/ipv4.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv4/ipv4_frag.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv4/icmp.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv4/igmp.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/ipv6.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/ipv6_frag.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/icmpv6.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/mld.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/ndp.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/ipv6/slaac.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/ip.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/tcp.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/tcp_fsm.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/tcp_misc.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/tcp_timer.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/udp.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/socket.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/bsd_socket.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/core/raw_socket.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dns/dns_cache.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dns/dns_client.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dns/dns_common.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dns/dns_debug.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/mdns/mdns_client.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/mdns/mdns_responder.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/mdns/mdns_common.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/netbios/nbns_client.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/netbios/nbns_responder.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/netbios/nbns_common.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dhcp/dhcp_client.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dhcp/dhcp_common.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/dhcp/dhcp_debug.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/http/http_server.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/http/http_server_auth.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/http/http_server_misc.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/http/mime.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/http/ssi.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_tcp/smtp/smtp_client.h">
+			<Option virtualFolder="CycloneTCP Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneSSL Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_cipher_suites.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneSSL Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_client.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneSSL Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_server.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneSSL Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_common.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneSSL Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_record.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneSSL Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_io.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneSSL Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_misc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneSSL Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_cache.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneSSL Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/ssl_common.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneSSL Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls.h">
+			<Option virtualFolder="CycloneSSL Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_cipher_suites.h">
+			<Option virtualFolder="CycloneSSL Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_client.h">
+			<Option virtualFolder="CycloneSSL Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_server.h">
+			<Option virtualFolder="CycloneSSL Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_common.h">
+			<Option virtualFolder="CycloneSSL Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_record.h">
+			<Option virtualFolder="CycloneSSL Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_io.h">
+			<Option virtualFolder="CycloneSSL Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_cache.h">
+			<Option virtualFolder="CycloneSSL Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/tls_misc.h">
+			<Option virtualFolder="CycloneSSL Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_ssl/ssl_common.h">
+			<Option virtualFolder="CycloneSSL Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/base64.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/md2.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/md4.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/md5.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ripemd128.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ripemd160.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha1.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha224.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha256.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha384.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha512.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha512_224.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha512_256.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/tiger.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/whirlpool.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/hmac.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/rc4.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/rc6.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/idea.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/des.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/des3.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/aes.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/camellia.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/seed.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/aria.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_ecb.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_cbc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_cfb.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_ofb.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_ctr.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_ccm.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_gcm.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/dh.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/rsa.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/dsa.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ec.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ec_curves.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ecdh.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ecdsa.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/pkcs5.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/mpi.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/asn1.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/oid.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/x509.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/pem.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/yarrow.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="CycloneCrypto Sources/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/crypto.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/base64.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/md2.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/md4.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/md5.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ripemd128.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ripemd160.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha1.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha224.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha256.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha384.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha512.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha512_224.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/sha512_256.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/tiger.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/whirlpool.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/hmac.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/rc4.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/rc6.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/idea.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/des.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/des3.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/aes.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/camellia.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/seed.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/aria.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_ecb.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_cbc.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_cfb.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_ofb.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_ctr.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_ccm.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/cipher_mode_gcm.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/dh.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/rsa.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/dsa.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ec.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ec_curves.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ecdh.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/ecdsa.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/pkcs5.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/mpi.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/asn1.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/oid.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/x509.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/pem.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../../cyclone_crypto/yarrow.h">
+			<Option virtualFolder="CycloneCrypto Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/portable/gcc/arm_cm4f/port.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="FreeRTOS Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/croutine.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="FreeRTOS Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/list.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="FreeRTOS Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/queue.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="FreeRTOS Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/tasks.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="FreeRTOS Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/timers.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="FreeRTOS Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/portable/memmang/heap_3.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="FreeRTOS Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/portable/gcc/arm_cm4f/portmacro.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/croutine.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/FreeRTOS.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/list.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/mpu_wrappers.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/portable.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/projdefs.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/queue.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/semphr.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/StackMacros.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/task.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/freertos/include/timers.h">
+			<Option virtualFolder="FreeRTOS Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/accel_lis3dh.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MCBSTM32F400 Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/adc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MCBSTM32F400 Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/cam.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MCBSTM32F400 Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/glcd.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MCBSTM32F400 Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/gyro_l3g4200d.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MCBSTM32F400 Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/i2c.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MCBSTM32F400 Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/joy.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MCBSTM32F400 Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/kbd.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MCBSTM32F400 Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/led.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MCBSTM32F400 Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/tsc_stmpe811.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="MCBSTM32F400 Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/accel.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/adc.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/cam.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/font_6x8.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/font_16x24.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/glcd.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/gyro.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/i2c.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/joy.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/kbd.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/led.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/keil/boards/mcbstm32f400/tsc.h">
+			<Option virtualFolder="MCBSTM32F400 Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/misc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_can.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_crc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_cryp.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_cryp_aes.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_cryp_des.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_cryp_tdes.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_dac.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_dbgmcu.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_dcmi.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_dma.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_exti.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_flash.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_fsmc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_gpio.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_hash.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_hash_md5.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_hash_sha1.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_iwdg.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_pwr.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_rcc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_rng.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_rtc.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_sdio.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_spi.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_syscfg.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_tim.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_usart.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/src/stm32f4xx_wwdg.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="STM32F4xx Std Periph Lib Sources/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/misc.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_can.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_crc.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_cryp.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_dac.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_dbgmcu.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_dcmi.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_dma.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_exti.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_flash.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_fsmc.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_gpio.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_hash.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_iwdg.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_pwr.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_rcc.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_rng.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_rtc.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_sdio.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_spi.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_syscfg.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_tim.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_usart.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Unit filename="../../../../common/st/stm32f4xx_std_periph_lib/inc/stm32f4xx_wwdg.h">
+			<Option virtualFolder="STM32F4xx Std Periph Lib Headers/" />
+		</Unit>
+		<Extensions>
+			<projectwizard TargetDevice="STM32F407IG" />
+			<code_completion />
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="2331" remote_server="J-Link GDB Server" Break_at_Main="0" Break_at_Main_Symbol="main" />
+				</remote_debugging>
+				<remote_debugging target="Debug">
+					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="2331" remote_server="J-Link GDB Server" Break_at_Main="1" Break_at_Main_Symbol="main" additional_cmds="monitor reset&#x0A;load" />
+				</remote_debugging>
+				<remote_debugging target="Release">
+					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="2331" remote_server="J-Link GDB Server" Break_at_Main="1" Break_at_Main_Symbol="main" additional_cmds="monitor reset&#x0A;load" />
+				</remote_debugging>
+			</debugger>
+			<J-Link>
+				<GDBServer TargetName="Debug">
+					<CmdOption UseGDBServer="1" />
+					<CmdOption TargetDevice="STM32F407IG" />
+					<CmdOption TargetInterface="1" />
+					<CmdOption InterfaceSpeed="4000" />
+					<CmdOption TargetEndian="0" />
+					<CmdOption OverrideExe="0" Filename="" />
+					<CmdOption StartServer="1" />
+					<CmdOption CloseServer="1" />
+					<CmdOption ServerIP="localhost" />
+					<CmdOption ServerPort="2331" />
+					<CmdOption UseAdvancedOptions="0" />
+					<CmdOption SelectJLink="" />
+					<CmdOption InitRegs="1" />
+					<CmdOption LocalhostOnly="1" />
+					<CmdOption Log="0" Filename="" />
+					<CmdOption Silent="0" />
+					<CmdOption StayOnTop="0" />
+					<CmdOption VerifyDownload="0" />
+					<CmdOption NoTargetTimeout="0" />
+					<CmdOption JTAGConf="0" IRPre="0" DRPre="0" />
+					<CmdOption JLinkScript="0" Filename="" />
+					<CmdOption JLinkSettings="0" Filename="" />
+					<CmdOption GDBInit="0" Filename="" />
+					<CmdOption AdditionalOptions="" />
+				</GDBServer>
+				<GDBServer TargetName="Release">
+					<CmdOption UseGDBServer="1" />
+					<CmdOption TargetDevice="STM32F407IG" />
+					<CmdOption TargetInterface="1" />
+					<CmdOption InterfaceSpeed="4000" />
+					<CmdOption TargetEndian="0" />
+					<CmdOption OverrideExe="0" Filename="" />
+					<CmdOption StartServer="1" />
+					<CmdOption CloseServer="1" />
+					<CmdOption ServerIP="localhost" />
+					<CmdOption ServerPort="2331" />
+					<CmdOption UseAdvancedOptions="0" />
+					<CmdOption SelectJLink="" />
+					<CmdOption InitRegs="1" />
+					<CmdOption LocalhostOnly="1" />
+					<CmdOption Log="0" Filename="" />
+					<CmdOption Silent="0" />
+					<CmdOption StayOnTop="0" />
+					<CmdOption VerifyDownload="0" />
+					<CmdOption NoTargetTimeout="0" />
+					<CmdOption JTAGConf="0" IRPre="0" DRPre="0" />
+					<CmdOption JLinkScript="0" Filename="" />
+					<CmdOption JLinkSettings="0" Filename="" />
+					<CmdOption GDBInit="0" Filename="" />
+					<CmdOption AdditionalOptions="" />
+				</GDBServer>
+			</J-Link>
+		</Extensions>
+	</Project>
+</emIDE_project_file>

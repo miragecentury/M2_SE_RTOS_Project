@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<deviceVariant value="Cortex M.F28M35H52C1"/>
+	<deviceFamily value="TMS470"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="5.2.2"/>
+	<isElfFormat value="true"/>
+	<linkerCommandFile value="F28M35H52C1.cmd"/>
+	<rts value="rtsv7M3_T_le_eabi.lib"/>
+	<createSlaveProjects value=""/>
+	<templateProperties value="id=com.ti.rtsc.SYSBIOS.example_10,type=rtsc,products=com.ti.rtsc.SYSBIOS,platform=ti.platforms.concertoM3:$DeviceId$,buildProfile=release,isHybrid=true,configuroOptions=--compileOptions &quot;-g --optimize_with_debug&quot;,"/>
+	<isTargetManual value="false"/>
+</projectOptions>

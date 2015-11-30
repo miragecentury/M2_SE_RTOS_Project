@@ -1,0 +1,3 @@
+<Project Header="Project 'ftp_client_demo'" Path=".\ftp_client_demo.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="ftp_client_demo" >
+	<ApplicationBuild Header="ftp_client_demo" Extern=".\ftp_client_demo.rapp" Path=".\ftp_client_demo.rapp" OutputFile=".\Output\ftp_client_demo.elf" sate="98" />
+</Project>

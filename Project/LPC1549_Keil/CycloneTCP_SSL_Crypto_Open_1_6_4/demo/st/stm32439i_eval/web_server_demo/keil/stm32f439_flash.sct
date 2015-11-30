@@ -1,0 +1,26 @@
+;********************************************************************
+;* STM32F439 linker scatter file (running code from internal FLASH) *
+;********************************************************************
+
+LR_IROM1 0x08000000 0x200000
+{
+   ER_IROM1 0x08000000 0x200000
+   {
+      *.o (RESET, +First)
+      *(InRoot$$Sections)
+      .ANY (+RO)
+   }
+   
+   RW_IRAM1 0x20000000 0x2F000
+   { 
+      .ANY (+RW +ZI)
+   }
+   
+   ARM_LIB_STACK 0x20030000 EMPTY -0x1000
+   {
+   }
+   
+   ARM_LIB_HEAP 0xC0000000 EMPTY 0x400000
+   {
+   }
+}

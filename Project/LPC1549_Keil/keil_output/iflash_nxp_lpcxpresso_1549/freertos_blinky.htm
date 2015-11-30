@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\keil_output\iflash_nxp_lpcxpresso_1549\freertos_blinky.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\keil_output\iflash_nxp_lpcxpresso_1549\freertos_blinky.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060020: Last Updated: Mon Nov 30 10:13:27 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060020: Last Updated: Mon Nov 30 10:24:10 2015
 <BR><P>
 <H3>Maximum Stack Usage =        184 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -86,9 +86,9 @@ Function Pointers
  <LI><a href="#[40]">fputc</a> from board.o(i.fputc) referenced from _printf_char_file.o(.text)
  <LI><a href="#[46]">prvIdleTask</a> from tasks.o(i.prvIdleTask) referenced from tasks.o(i.vTaskStartScheduler)
  <LI><a href="#[45]">prvTaskExitError</a> from port.o(i.prvTaskExitError) referenced from port.o(i.pxPortInitialiseStack)
- <LI><a href="#[42]">vLEDTask1</a> from freertos_blinky.o(i.vLEDTask1) referenced from freertos_blinky.o(i.main)
- <LI><a href="#[43]">vLEDTask2</a> from freertos_blinky.o(i.vLEDTask2) referenced from freertos_blinky.o(i.main)
- <LI><a href="#[44]">vUARTTask</a> from freertos_blinky.o(i.vUARTTask) referenced from freertos_blinky.o(i.main)
+ <LI><a href="#[42]">vLEDTask1</a> from main.o(i.vLEDTask1) referenced from main.o(i.main)
+ <LI><a href="#[43]">vLEDTask2</a> from main.o(i.vLEDTask2) referenced from main.o(i.main)
+ <LI><a href="#[44]">vUARTTask</a> from main.o(i.vUARTTask) referenced from main.o(i.main)
 </UL>
 <P>
 <H3>
@@ -261,9 +261,9 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[9a]"></a>ulPortSetInterruptMask</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, port.o(.emb_text))
 <BR><BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 <LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 <LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvTaskExitError
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 </UL>
 
 <P><STRONG><a name="[9c]"></a>vPortClearInterruptMask</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, port.o(.emb_text))
@@ -962,13 +962,13 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_file.o(.text)
 </UL>
-<P><STRONG><a name="[55]"></a>main</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, freertos_blinky.o(i.main))
+<P><STRONG><a name="[55]"></a>main</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
 <LI>Call Chain = main &rArr; vTaskStartScheduler &rArr; xTaskGenericCreate &rArr; prvAllocateTCBAndStack &rArr; pvPortMalloc &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
+<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSetupHardware
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSetupHardware
 </UL>
 <BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
@@ -990,8 +990,8 @@ Global Symbols
 <P><STRONG><a name="[aa]"></a>uxListRemove</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, list.o(i.uxListRemove))
 <BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 
 <P><STRONG><a name="[ae]"></a>vApplicationIdleHook</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, freertoscommonhooks.o(i.vApplicationIdleHook))
@@ -1014,8 +1014,8 @@ Global Symbols
 
 <P><STRONG><a name="[bd]"></a>vListInsertEnd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, list.o(i.vListInsertEnd))
 <BR><BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 </UL>
 
 <P><STRONG><a name="[a9]"></a>vPortEnterCritical</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, port.o(i.vPortEnterCritical))
@@ -1025,8 +1025,8 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortSuppressTicksAndSleep
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 </UL>
 
 <P><STRONG><a name="[ab]"></a>vPortExitCritical</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, port.o(i.vPortExitCritical))
@@ -1036,8 +1036,8 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCheckTasksWaitingTermination
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortSuppressTicksAndSleep
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 </UL>
 
 <P><STRONG><a name="[a5]"></a>vPortFree</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, heap_3.o(i.vPortFree))
@@ -1092,8 +1092,8 @@ Global Symbols
 <LI>Call Chain = vTaskStartScheduler &rArr; xTaskGenericCreate &rArr; prvAllocateTCBAndStack &rArr; pvPortMalloc &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulPortSetInterruptMask
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortStartScheduler
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGenericCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1136,8 +1136,8 @@ Global Symbols
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pxPortInitialiseStack
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 </UL>
 
 <P><STRONG><a name="[9b]"></a>xTaskIncrementTick</STRONG> (Thumb, 240 bytes, Stack size 24 bytes, tasks.o(i.xTaskIncrementTick))
@@ -1171,41 +1171,6 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[9e]"></a>prvSetupHardware</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, freertos_blinky.o(i.prvSetupHardware))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = prvSetupHardware &rArr; Board_Init &rArr; Board_Debug_Init &rArr; Chip_UART_SetBaud &rArr; Chip_Clock_GetUARTBaseClockRate &rArr; __aeabi_uldivmod
-</UL>
-<BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Board_LED_Set
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Board_Init
-</UL>
-<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[42]"></a>vLEDTask1</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, freertos_blinky.o(i.vLEDTask1))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = vLEDTask1 &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
-</UL>
-<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Board_LED_Set
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> freertos_blinky.o(i.main)
-</UL>
-<P><STRONG><a name="[43]"></a>vLEDTask2</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, freertos_blinky.o(i.vLEDTask2))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = vLEDTask2 &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
-</UL>
-<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Board_LED_Set
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> freertos_blinky.o(i.main)
-</UL>
-<P><STRONG><a name="[44]"></a>vUARTTask</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, freertos_blinky.o(i.vUARTTask))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = vUARTTask &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
-</UL>
-<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> freertos_blinky.o(i.main)
-</UL>
 <P><STRONG><a name="[a1]"></a>prvAddCurrentTaskToDelayedList</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, tasks.o(i.prvAddCurrentTaskToDelayedList))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
@@ -1287,6 +1252,41 @@ Local Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ulPortSetInterruptMask
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> port.o(i.pxPortInitialiseStack)
+</UL>
+<P><STRONG><a name="[9e]"></a>prvSetupHardware</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, main.o(i.prvSetupHardware))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = prvSetupHardware &rArr; Board_Init &rArr; Board_Debug_Init &rArr; Chip_UART_SetBaud &rArr; Chip_Clock_GetUARTBaseClockRate &rArr; __aeabi_uldivmod
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Board_LED_Set
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Board_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[42]"></a>vLEDTask1</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, main.o(i.vLEDTask1))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = vLEDTask1 &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Board_LED_Set
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
+</UL>
+<P><STRONG><a name="[43]"></a>vLEDTask2</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, main.o(i.vLEDTask2))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = vLEDTask2 &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Board_LED_Set
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
+</UL>
+<P><STRONG><a name="[44]"></a>vUARTTask</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, main.o(i.vUARTTask))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = vUARTTask &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
 <P><STRONG><a name="[78]"></a>Chip_SWM_MovablePortPinAssign</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, board.o(i.Chip_SWM_MovablePortPinAssign))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Chip_SWM_MovablePortPinAssign &rArr; Chip_SWM_MovablePinAssign

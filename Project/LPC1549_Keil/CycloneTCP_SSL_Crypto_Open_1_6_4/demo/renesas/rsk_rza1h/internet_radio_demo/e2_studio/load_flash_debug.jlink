@@ -1,0 +1,13 @@
+//Reset target
+rx 100
+
+// Select comparison method (no compare)
+exec SetSkipProgOnCRCMatch=0
+
+//Load binary file into target memory
+loadbin debug/internet_radio_demo.bin,0x18080000
+
+//Verify target memory
+verifybin debug/internet_radio_demo.bin,0x18080000
+
+exit

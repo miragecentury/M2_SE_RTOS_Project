@@ -1,0 +1,24 @@
+reset
+stop
+#reset
+
+info memory
+memory S:0x00000000 S:0x07ffffff ro
+memory S:0x08000000 S:0x0fffffff cache
+memory S:0x3fffff80 S:0x3fffffff nocache noverify
+memory S:0xfcfe0000 S:0xfcfeffff nocache noverify
+
+# USB Register accessed by only 16bit
+memory S:0xe8010000 S:0xe801010f 16
+memory S:0xe8207000 S:0xe820710f 16
+info memory
+
+######################################
+# Release L2 cache standby			##
+######################################
+mem set 0x3fffff80 32 0x00000001
+
+# ;*Writing to On-Chip Data-Retention RAM is enabled.
+# ;SYSCR3.RRAMWE3=RRAMWE2=RRAMWE1=RRAMWE0=1
+memory set S:0xFCFE0408 0 {(unsigned char)0x0F}
+x/1b 0xfcfe0408

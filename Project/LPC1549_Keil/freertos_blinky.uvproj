@@ -161,7 +161,7 @@
             <CpuDllArguments></CpuDllArguments>
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile>..\..\..\..\tool_configs\keil_ini_files\lpc15xx_debug_iflash.ini</InitializationFile>
+            <InitializationFile>.\tool_configs\keil_ini_files\lpc15xx_debug_iflash.ini</InitializationFile>
             <Driver>BIN\CMSIS_AGDI.dll</Driver>
           </TargetDlls>
         </DebugOption>
@@ -371,7 +371,7 @@
               <MiscControls></MiscControls>
               <Define>CORE_M3</Define>
               <Undefine></Undefine>
-              <IncludePath>.\lpc_core\lpc_board\boards_15xx\nxp_lpcxpresso_1549;.\lpc_core\lpc_chip\chip_common;.\lpc_core\lpc_chip\chip_15xx;.\lpc_core\lpc_chip\chip_15xx\config_15xx;.\CMSIS;.\lpc_core\lpc_board\board_common;.\freertos\freertos\Source\include;.\freertos\freertos\Source\portable\RVDS\ARM_CM3;.\examples\freertos\freertos_blinky;.\keil_output</IncludePath>
+              <IncludePath>.\lpc_core\lpc_board\boards_15xx\nxp_lpcxpresso_1549;.\lpc_core\lpc_chip\chip_common;.\lpc_core\lpc_chip\chip_15xx;.\lpc_core\lpc_chip\chip_15xx\config_15xx;.\CMSIS;.\lpc_core\lpc_board\board_common;.\freertos\freertos\Source\include;.\freertos\freertos\Source\portable\RVDS\ARM_CM3;.\examples\freertos\freertos_blinky;.\keil_output;.\CycloneTCP_SSL_Crypto_Open_1_6_4\common;.\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -411,26 +411,6 @@
         </TargetArmAds>
       </TargetOption>
       <Groups>
-        <Group>
-          <GroupName>example</GroupName>
-          <Files>
-            <File>
-              <FileName>sysinit.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\startup_code\sysinit.c</FilePath>
-            </File>
-            <File>
-              <FileName>freertos_blinky.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\examples\freertos\freertos_blinky\freertos_blinky.c</FilePath>
-            </File>
-            <File>
-              <FileName>keil_freertos_startup_lpc15xx.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\examples\freertos\startup_code\keil_freertos_startup_lpc15xx.s</FilePath>
-            </File>
-          </Files>
-        </Group>
         <Group>
           <GroupName>lib</GroupName>
           <Files>
@@ -487,12 +467,47 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>cyclone_common</GroupName>
+          <Files>
+            <File>
+              <FileName>os_port.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\CycloneTCP_SSL_Crypto_Open_1_6_4\common\os_port.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>example</GroupName>
+          <Files>
+            <File>
+              <FileName>sysinit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\startup_code\sysinit.c</FilePath>
+            </File>
+            <File>
+              <FileName>keil_freertos_startup_lpc15xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\examples\freertos\startup_code\keil_freertos_startup_lpc15xx.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>src</GroupName>
           <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FilePath>.\src\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>myNetwork.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\myNetwork.c</FilePath>
+            </File>
+            <File>
+              <FileName>os_port_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\os_port_config.h</FilePath>
             </File>
           </Files>
         </Group>

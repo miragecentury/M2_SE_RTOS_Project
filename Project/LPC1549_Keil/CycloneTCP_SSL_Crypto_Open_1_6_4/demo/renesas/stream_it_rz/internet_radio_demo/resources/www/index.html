@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Internet Radio Demo</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/custom-stylesheet.css" />
+	
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/custom-script.js"></script>
+</head>
+<body>
+	<div data-role="page" data-theme="b" id="settingsPage">
+		<!-- Header -->
+		<div data-role="header" data-position="inline">
+			<img src="images/cyclone_tcp_white.png" width="156px" height="80px" alt="CycloneTCP" style="vertical-align: middle;" /> 
+			<span class="ui-btn-right headerTitle">Web Radio</span>
+		</div>
+		
+		<!-- Content -->
+		<div data-role="content" data-theme="a">
+			<form  id="settingsForm">
+				<!-- Icecast settings -->
+				<div data-role="header">
+					<h1>Icecast Settings</h1>
+				</div>
+				
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup">
+						<legend>URL:</legend>
+						<input type="text" name="icecastSettingsUrl" id="icecastSettingsUrl" maxlength="59">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup">
+						<legend>Icecast Server Port:</legend>
+						<input type="text" name="icecastSettingsPort" id="icecastSettingsPort" maxlength="5">
+					</fieldset>
+				</div>
+				
+				<!-- LAN settings -->
+				<div data-role="header">
+					<h1>LAN Settings</h1>
+				</div>
+				
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup">
+						<legend>MAC Address:</legend>
+						<input type="text" name="lanSettingsMacAddr" id="lanSettingsMacAddr" maxlength="17">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup">
+						<legend>Host Name:</legend>
+						<input type="text" name="lanSettingsHostName" id="lanSettingsHostName" maxlength="15">
+					</fieldset>
+				</div>
+				<div class="ui-field-contain">
+					<label for="lanSettingsEnableDhcp">DHCP Client:</label>
+					<select name="lanSettingsEnableDhcp" id="lanSettingsEnableDhcp" data-role="slider">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+					</select>
+				</div>
+				
+				<div id="lanSettingsManualConfig">
+					<div class="ui-field-contain">
+						<fieldset data-role="controlgroup">
+							<legend>IPv4 Address:</legend>
+							<input type="text" name="lanSettingsHostAddr" id="lanSettingsHostAddr" maxlength="15">
+						</fieldset>
+					</div>
+					<div class="ui-field-contain">
+						<fieldset data-role="controlgroup">
+							<legend>Subnet Mask:</legend>
+							<input type="text" name="lanSettingsSubnetMask" id="lanSettingsSubnetMask" maxlength="15">
+						</fieldset>
+					</div>
+					<div class="ui-field-contain">
+						<fieldset data-role="controlgroup">
+							<legend>Default Gateway:</legend>
+							<input type="text" name="lanSettingsDefaultGateway" id="lanSettingsDefaultGateway" maxlength="15">
+						</fieldset>
+					</div>
+					<div class="ui-field-contain">
+						<fieldset data-role="controlgroup">
+							<legend>Primary DNS:</legend>
+							<input type="text" name="lanSettingsPrimaryDns" id="lanSettingsPrimaryDns" maxlength="15">
+						</fieldset>
+					</div>
+					<div class="ui-field-contain">
+						<fieldset data-role="controlgroup">
+							<legend>Secondary DNS:</legend>
+							<input type="text" name="lanSettingsSecondaryDns" id="lanSettingsSecondaryDns" maxlength="15">
+						</fieldset>
+					</div>
+				</div>
+				
+				<!-- Proxy settings -->
+				<div data-role="header">
+					<h1>Proxy Settings</h1>
+				</div>
+				
+				<div class="ui-field-contain">
+					<label for="proxySettingsEnable">Proxy:</label>
+					<select name="proxySettingsEnable" id="proxySettingsEnable" data-role="slider">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+					</select>
+				</div>
+				
+				<div id="proxySettings">
+					<div class="ui-field-contain">
+						<fieldset data-role="controlgroup">
+							<legend>Proxy Server Name:</legend>
+							<input type="text" name="proxySettingsName" id="proxySettingsName" maxlength="15">
+						</fieldset>
+						<fieldset data-role="controlgroup">
+							<legend>Proxy Server Port:</legend>
+							<input type="text" name="proxySettingsPort" id="proxySettingsPort" maxlength="5">
+						</fieldset>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<!-- Footer -->
+		<div data-role="header" data-position="inline">
+			<h1></h1>
+			<a data-icon="delete" class="cancelButton">Cancel</a>
+			<a data-icon="check" class="saveButton">Save</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+span.headerTitle {
+	vertical-align: middle;
+	line-height: 60px;
+	font-size: 24px !important;
+	color: #FFFFFF;
+}
+
+.cancelButton {
+	width: 100px;
+	left: auto;
+	right: 160px;
+}
+
+.saveButton {
+	width: 100px;
+}
+
+div.error {
+    color: #3388CC;
+	font-style: italic
+}

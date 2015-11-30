@@ -1,0 +1,30 @@
+//Reset target
+rx 100
+
+// Select comparison method (no compare)
+exec SetSkipProgOnCRCMatch=0
+
+//PMC4
+w2 0xFCFE3410 0x00FC
+//PFC4
+w2 0xFCFE3510 0x00FC
+//PIPC4
+w2 0xFCFE7210 0x00FC
+//PMC3
+w2 0xFCFE340C 0x3C00
+//PFC3
+w2 0xFCFE350C 0x3C00
+//PIPC3
+w2 0xFCFE720C 0x3C00
+
+//Load QSPI loader into target memory
+loadbin pekoe_qspi_loader.bin,0x18000000
+//Verify target memory
+verifybin pekoe_qspi_loader.bin,0x18000000
+
+//Load binary file into target memory
+loadbin release/internet_radio_demo.bin,0x18080000
+//Verify target memory
+verifybin release/internet_radio_demo.bin,0x18080000
+
+exit

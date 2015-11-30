@@ -1,0 +1,26 @@
+;*****************************************************************
+;* S6E2CC linker scatter file (running code from internal FLASH) *
+;*****************************************************************
+
+LR_IROM1 0x00000000 0x200000
+{
+   ER_IROM1 0x00000000 0x200000
+   {
+      *.o (RESET, +First)
+      *(InRoot$$Sections)
+      .ANY (+RO)
+   }
+   
+   RW_IRAM1 0x20038000 0xF000
+   { 
+      .ANY (+RW +ZI)
+   }
+   
+   ARM_LIB_STACK 0x20048000 EMPTY -0x1000
+   {
+   }
+   
+   ARM_LIB_HEAP 0x1FFD0000 EMPTY 0x30000
+   {
+   }
+}

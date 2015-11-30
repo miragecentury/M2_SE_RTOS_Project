@@ -1,0 +1,3 @@
+<Project Header="Project 'web_server_demo'" Path=".\web_server_demo.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="web_server_demo" >
+	<ApplicationBuild Header="web_server_demo" Extern=".\web_server_demo.rapp" Path=".\web_server_demo.rapp" OutputFile=".\Output\web_server_demo.elf" sate="98" />
+</Project>

@@ -1,6 +1,5 @@
 --cpu Cortex-M3
 ".\keil_output\iflash_nxp_lpcxpresso_1549\sysinit.o"
-".\keil_output\iflash_nxp_lpcxpresso_1549\freertos_blinky.o"
 ".\keil_output\iflash_nxp_lpcxpresso_1549\keil_freertos_startup_lpc15xx.o"
 ".\lpc_core\lpc_chip\chip_15xx\keil_output\chip_15xx_lib\chip_15xx_lib.lib"
 ".\keil_output\board_nxp_lpcxpresso_1549.lib"
@@ -11,6 +10,7 @@
 ".\keil_output\iflash_nxp_lpcxpresso_1549\heap_3.o"
 ".\keil_output\iflash_nxp_lpcxpresso_1549\port.o"
 ".\keil_output\iflash_nxp_lpcxpresso_1549\freertoscommonhooks.o"
+".\keil_output\iflash_nxp_lpcxpresso_1549\main.o"
 --strict --scatter ".\keil_output\iflash_nxp_lpcxpresso_1549\freertos_blinky.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

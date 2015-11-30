@@ -1,0 +1,26 @@
+;*****************************************************************
+;* SAMV71 linker scatter file (running code from internal FLASH) *
+;*****************************************************************
+
+LR_IROM1 0x00400000 0x200000
+{
+   ER_IROM1 0x00400000 0x200000
+   {
+      *.o (RESET, +First)
+      *(InRoot$$Sections)
+      .ANY (+RO)
+   }
+   
+   RW_IRAM1 0x20400000 0x5F000
+   { 
+      .ANY (+RW +ZI)
+   }
+   
+   ARM_LIB_STACK 0x20460000 EMPTY -0x1000
+   {
+   }
+   
+   ARM_LIB_HEAP 0x70000000 EMPTY 0x200000
+   {
+   }
+}
