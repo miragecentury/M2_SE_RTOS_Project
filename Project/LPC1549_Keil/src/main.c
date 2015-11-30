@@ -1,19 +1,8 @@
-
-#include "board.h"
-#include "FreeRTOS.h"
-#include "task.h"
-
+#include <stdlib.h>
 #include "myNetwork.h"
+#include "lpc_types.h"
+#include "os_port.h"
 
-/* Sets up system hardware */
-static void prvSetupHardware(void)
-{
-	SystemCoreClockUpdate();
-	Board_Init();
-
-	/* Initial LED0 state is off */
-	Board_LED_Set(0, false);
-}
 
 
 /* LED1 toggle thread */
@@ -65,13 +54,17 @@ static void vUARTTask(void *pvParameters) {
  */
 int main(void)
 {
-	prvSetupHardware();
+	 SystemCoreClockUpdate();
+	 Board_Init();
+	 //Initialize kernel
+   osInitKernel();
+
 
 	/* LED1 toggle thread */
 	xTaskCreate(vLEDTask1, "vTaskLed1",
 				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
 				(TaskHandle_t *) NULL);
-
+	
 	/* LED2 toggle thread */
 	xTaskCreate(vLEDTask2, "vTaskLed2",
 				configMINIMAL_STACK_SIZE, NULL, (tskIDLE_PRIORITY + 1UL),
@@ -83,7 +76,7 @@ int main(void)
 				(TaskHandle_t *) NULL);
 
 	/* Start the scheduler */
-	vTaskStartScheduler();
+	osStartKernel();
 
 	/* Should never arrive here */
 	return 1;

@@ -47,8 +47,9 @@
 /**
  * @brief Boolean Type definition
  */
+ #ifndef FALSE
 typedef enum {FALSE = 0, TRUE = !FALSE} Bool;
-
+#endif
 /**
  * @brief Boolean Type definition
  */
